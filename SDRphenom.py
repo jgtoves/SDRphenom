@@ -20,7 +20,8 @@ def calculate_coherence(samples):
     return entropy / max_entropy
 
 def main():
-    sdr = RtlSdr()
+    from rtlsdr import RtlSdrTcpClient
+sdr = RtlSdrTcpClient(hostname='127.0.0.1', port=1234)
     
     # Target natural/uncommon bands (e.g., 142 MHz range or VLF if using Direct Sampling)
     # Note: 1420.4 MHz is the Hydrogen Line (Cosmic Baseline)
